@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demandapp-deployment
+  labels:
+    app: demandapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demandapp
+  template:
+    metadata:
+      labels:
+        app: demandapp
+    spec:
+      containers:
+      - name: demandapp
+        image: 958755137401.dkr.ecr.us-east-2.amazonaws.com/markretailproduct:latest
+        ports:
+        - containerPort: 3000
