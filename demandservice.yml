@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demandapp-service
+
+spec:
+   selector:
+     app: demandapp
+   type: LoadBalancer
+   ports:
+   - protocol: TCP
+     port: 5000
+     targetPort: 3000
+     nodePort: 31130
